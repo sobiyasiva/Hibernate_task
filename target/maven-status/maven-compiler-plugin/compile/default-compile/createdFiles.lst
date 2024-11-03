@@ -1,0 +1,9 @@
+com\example\CustomerListServlet.class
+com\example\ProductServlet.class
+com\example\DeleteCustomerServlet.class
+com\example\EditCustomerServlet.class
+com\example\HibernateConfiguration.class
+com\example\AddCustomerServlet.class
+com\example\Customer.class
+com\example\CustomerServlet.class
+com\example\Product.class
