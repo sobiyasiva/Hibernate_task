@@ -5,5 +5,4 @@ com\example\EditCustomerServlet.class
 com\example\HibernateConfiguration.class
 com\example\AddCustomerServlet.class
 com\example\Customer.class
-com\example\CustomerServlet.class
 com\example\Product.class

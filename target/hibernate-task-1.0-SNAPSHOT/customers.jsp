@@ -5,7 +5,6 @@
 <head>
     <title>Customer List</title>
     <style>
-       /* Body styling */
 body {
     background-color: #f8fafc;
     color: #333;
@@ -15,7 +14,6 @@ body {
     padding: 30px;
 }
 
-/* Page Title */
 h1 {
     font-size: 2.5em;
     color: #444;
@@ -23,7 +21,6 @@ h1 {
     text-align: center;
 }
 
-/* Add Button Positioning */
 .add-button-container {
     position: absolute;
     top: 20px;
@@ -45,7 +42,7 @@ h1 {
     background-color: #155a8a;
 }
 
-/* Table Styling */
+
 table {
     width: 100%;
     max-width: 1000px;
@@ -84,7 +81,7 @@ tr:hover td {
     background-color: #e3eaf2;
 }
 
-/* Action Buttons */
+
 button {
     padding: 8px 16px;
     margin-right: 5px;
@@ -113,7 +110,7 @@ button[onclick^="openEditModal"]:hover {
     background-color: #2980b9;
 }
 
-/* Centered Modal Styling */
+
 .modal {
     display: none;
     position: fixed;
@@ -137,7 +134,7 @@ button[onclick^="openEditModal"]:hover {
     text-align: center;
 }
 
-/* Close Button */
+
 .close {
     position: absolute;
     top: 15px;
@@ -152,7 +149,7 @@ button[onclick^="openEditModal"]:hover {
     color: #000;
 }
 
-/* Form Inputs in Modal */
+
 .modal-content label {
     display: block;
     margin: 15px 0 5px;
@@ -202,22 +199,26 @@ button[onclick^="openEditModal"]:hover {
 
         
         function openEditModal(customerId, name, email, phoneNumber, address, dateOfBirth) {
-            document.getElementById("editId").value = customerId;
-            document.getElementById("editName").value = name;
-            document.getElementById("editEmail").value = email;
-            document.getElementById("editPhoneNumber").value = phoneNumber;
-            document.getElementById("editAddress").value = address;
-            document.getElementById("editDateOfBirth").value = dateOfBirth;
+    document.getElementById("editId").value = customerId;
+    document.getElementById("editName").value = name;
+    document.getElementById("editEmail").value = email;
+    document.getElementById("editPhoneNumber").value = phoneNumber;
+    document.getElementById("editAddress").value = address;
+    document.getElementById("editDateOfBirth").value = dateOfBirth;
 
-            document.getElementById("editCustomerModal").style.display = "block";
-        }    
+    document.getElementById("editCustomerModal").style.display = "block";
+}    
 
-        function openDeleteModal(customerId) {
-            if (confirm('Are you sure you want to delete this customer?')) {
-                document.getElementById('deleteCustomerId').value = customerId;
-                document.getElementById('deleteForm').submit();
-            }
+function openDeleteModal(customerId) {
+        
+        if (confirm('Are you sure you want to delete this customer?')) {
+            
+            document.getElementById('deleteCustomerId').value = customerId;
+            
+            
+            document.getElementById('deleteForm').submit();
         }
+    }
 
         
         window.onclick = function(event) {
@@ -227,20 +228,6 @@ button[onclick^="openEditModal"]:hover {
                 closeModal();
             }
         }
-
-        // Alert messages for success operations
-        function showAlert(message) {
-            alert(message);
-        }
-
-        // Show alert messages based on URL parameters
-        document.addEventListener("DOMContentLoaded", function() {
-            const urlParams = new URLSearchParams(window.location.search);
-            if (urlParams.has("success")) {
-                const message = urlParams.get("success");
-                showAlert(message);
-            }
-        });
     </script>
 </head>
 <body>
@@ -280,6 +267,8 @@ button[onclick^="openEditModal"]:hover {
                                 <form action="deleteCustomerServlet" method="post" onsubmit="return confirm('Are you sure you want to delete this customer?');" style="display:inline;">
                                     <button type="submit" name="id" value="<%= customer.getId() %>">Delete</button>
                                 </form>
+                                
+                                
                             </td>
                         </tr>
             <%
@@ -321,32 +310,33 @@ button[onclick^="openEditModal"]:hover {
         </div>
     </div>
 
-    <!-- Edit Customer Modal -->
-    <div id="editCustomerModal" class="modal">
-        <div class="modal-content">
-            <span class="close" onclick="closeModal()">&times;</span>
-            <h2>Edit Customer</h2>
-            <form action="editCustomerServlet" method="post">
-                <input type="hidden" id="editId" name="id">
-                
-                <label for="editName">Name:</label>
-                <input type="text" id="editName" name="name" required><br><br>
-                
-                <label for="editEmail">Email:</label>
-                <input type="email" id="editEmail" name="email" required><br><br>
-                
-                <label for="editPhoneNumber">Phone Number:</label>
-                <input type="text" id="editPhoneNumber" name="phoneNumber" required><br><br>
-                
-                <label for="editAddress">Address:</label>
-                <input type="text" id="editAddress" name="address" required><br><br>
-                
-                <label for="editDateOfBirth">Date of Birth:</label>
-                <input type="date" id="editDateOfBirth" name="dateOfBirth" required><br><br>
-                
-                <input type="submit" value="Update Customer">
-            </form>
-        </div>
+  <!-- Edit Customer Modal -->
+<div id="editCustomerModal" class="modal">
+    <div class="modal-content">
+        <span class="close" onclick="closeModal()">&times;</span>
+        <h2>Edit Customer</h2>
+        <form action="editCustomerServlet" method="post">
+            <input type="hidden" id="editId" name="id">
+            
+            <label for="editName">Name:</label>
+            <input type="text" id="editName" name="name" required><br><br>
+            
+            <label for="editEmail">Email:</label>
+            <input type="email" id="editEmail" name="email" required><br><br>
+            
+            <label for="editPhoneNumber">Phone Number:</label>
+            <input type="text" id="editPhoneNumber" name="phoneNumber" required><br><br>
+            
+            <label for="editAddress">Address:</label>
+            <input type="text" id="editAddress" name="address" required><br><br>
+            
+            <label for="editDateOfBirth">Date of Birth:</label>
+            <input type="date" id="editDateOfBirth" name="dateOfBirth" required><br><br>
+            
+            <input type="submit" value="Update Customer">
+        </form>
     </div>
+</div>
+
 </body>
 </html>
