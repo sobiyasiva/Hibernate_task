@@ -2,6 +2,7 @@ package com.example;
 
 import java.io.IOException;
 import java.time.LocalDate;
+
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -46,6 +47,8 @@ public class EditCustomerServlet extends HttpServlet {
                 customerToUpdate.setDateOfBirth(dateOfBirth);
                 session.update(customerToUpdate);
                 transaction.commit();
+
+        request.getSession().setAttribute("successMessage", "Customer updated successfully.");
                 System.out.println("Customer updated successfully.");
             } else {
                 System.out.println("Error: Customer with ID " + id + " not found.");

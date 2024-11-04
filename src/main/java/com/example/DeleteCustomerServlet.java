@@ -1,11 +1,13 @@
 package com.example;
 
 import java.io.IOException;
+
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.hibernate.Transaction;
@@ -33,6 +35,7 @@ public class DeleteCustomerServlet extends HttpServlet {
             session.delete(customer);
             transaction.commit();
 
+ request.getSession().setAttribute("successMessage", "Customer deleted successfully.");
             System.out.println("Customer deleted successfully.");
 
         } catch (Exception e) {

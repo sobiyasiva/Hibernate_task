@@ -19,8 +19,7 @@ public class AddCustomerServlet extends HttpServlet {
     private SessionFactory sessionFactory;
 
     @Override
-    public void init() throws ServletException {
-        
+    public void init() throws ServletException {  
         sessionFactory = new Configuration().configure().buildSessionFactory();
     }
 
@@ -51,7 +50,7 @@ public class AddCustomerServlet extends HttpServlet {
             return;
         }
 
-        
+        request.getSession().setAttribute("successMessage", "Customer added successfully.");
         response.sendRedirect("customerListServlet");
     }
     
