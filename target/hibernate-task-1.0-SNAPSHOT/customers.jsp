@@ -201,13 +201,6 @@
             }
         }
 
-        window.onclick = function(event) {
-            const addModal = document.getElementById("addCustomerModal");
-            const editModal = document.getElementById("editCustomerModal");
-            if (event.target === addModal || event.target === editModal) {
-                closeModal();
-            }
-        }
     </script>
 </head>
 <body>
