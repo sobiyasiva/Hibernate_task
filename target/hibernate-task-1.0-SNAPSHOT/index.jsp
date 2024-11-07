@@ -14,7 +14,7 @@
         }
 
         h1 {
-            font-size: 2em;
+            font-size: 35px;
             color: #444;
             margin-bottom: 30px;
             text-align: center;
@@ -31,11 +31,11 @@
             padding: 15px 30px;
             border: none;
             border-radius: 25px;
-            font-size: 1.1em;
+            font-size: 20px;
             cursor: pointer;
             text-align: center;
             text-decoration: none;
-            transition: background-color 0.3s;
+            /* transition: background-color 0.3s; */
         }
 
         .button:hover {

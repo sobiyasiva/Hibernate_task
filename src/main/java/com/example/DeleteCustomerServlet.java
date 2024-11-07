@@ -21,26 +21,26 @@ public class DeleteCustomerServlet extends HttpServlet {
             throws ServletException, IOException {
 
         String idParam = request.getParameter("id");
-        System.out.println("Received ID parameter: " + idParam);
+        // System.out.println("Received ID parameter: " + idParam);
 
         try {
             long customerId = Long.parseLong(idParam);
-            System.out.println("Parsed Customer ID: " + customerId);
+            // System.out.println("Parsed Customer ID: " + customerId);
 
             Session session = sessionFactory.openSession();
             Transaction transaction = session.beginTransaction();
             Customer customer = session.get(Customer.class, customerId);
-            System.out.println("Fetched Customer: " + customer);
+            // System.out.println("Fetched Customer: " + customer);
 
             session.delete(customer);
             transaction.commit();
 
  request.getSession().setAttribute("successMessage", "Customer deleted successfully.");
-            System.out.println("Customer deleted successfully.");
+            // System.out.println("Customer deleted successfully.");
 
         } catch (Exception e) {
+            System.out.println(e);
             
-            return;
         }
 
         response.sendRedirect("customerListServlet");

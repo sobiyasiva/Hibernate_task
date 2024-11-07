@@ -1,7 +1,6 @@
 package com.example;
 import java.io.IOException;
 import java.time.LocalDate;
-import java.util.List;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -53,16 +52,5 @@ public class AddCustomerServlet extends HttpServlet {
         request.getSession().setAttribute("successMessage", "Customer added successfully.");
         response.sendRedirect("customerListServlet");
     }
-    
-public List<Customer> fetchAllCustomers() {
-    List<Customer> customerList = null;
-    try (Session session = sessionFactory.openSession()) {
-        
-        customerList = session.createQuery("FROM Customer", Customer.class).list();
-    } catch (Exception e) {
-        e.printStackTrace();
-    }
-    return customerList;
-}
 
 }

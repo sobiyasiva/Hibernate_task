@@ -4,14 +4,14 @@
          http://xmlns.jcp.org/xml/ns/javaee/web-app_3_1.xsd" 
          version="3.1">
 
-    <servlet>
+    <!-- <servlet>
         <servlet-name>CustomerServlet</servlet-name>
         <servlet-class>com.example.CustomerServlet</servlet-class>
     </servlet>
     <servlet-mapping>
         <servlet-name>CustomerServlet</servlet-name>
         <url-pattern>/customer</url-pattern>
-    </servlet-mapping>
+    </servlet-mapping> -->
 
     <servlet>
         <servlet-name>ProductServlet</servlet-name>

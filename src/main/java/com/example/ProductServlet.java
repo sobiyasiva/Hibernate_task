@@ -64,13 +64,7 @@ public class ProductServlet extends HttpServlet {
         request.getRequestDispatcher("products.jsp").forward(request, response);
     }
 
-    @Override
-    public void destroy() {
-        if (sessionFactory != null) {
-            sessionFactory.close();
-            System.out.println("SessionFactory closed.");
-        }
-    }
+
     public static void main(String[] args) {
         ProductServlet productServlet = new ProductServlet();
         

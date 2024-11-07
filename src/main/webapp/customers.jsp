@@ -7,7 +7,7 @@
     <style>
         body {
             background-color: #f8fafc;
-            color: #333;
+            /* color: #333; */
             display: flex;
             flex-direction: column;
             align-items: center;
@@ -16,7 +16,7 @@
         }
 
         h1 {
-            font-size: 2.5em;
+            font-size: 35px;
             color: #444;
             margin-bottom: 25px;
             text-align: center;
@@ -33,7 +33,7 @@
             border: none;
             border-radius: 25px;
             cursor: pointer;
-            font-size: 1em;
+            font-size: 20px;
             transition: background-color 0.3s;
         }
 
@@ -52,7 +52,7 @@
         }
 
         th, td {
-            padding: 15px;
+            padding: 8px;
             text-align: left;
         }
 
@@ -76,9 +76,10 @@
         }
 
         button {
+            margin-bottom: 8px;
             padding: 8px 16px;
             margin-right: 5px;
-            font-size: 0.9em;
+            font-size: 15px;
             border: none;
             border-radius: 20px;
             cursor: pointer;
@@ -130,7 +131,7 @@
             position: absolute;
             top: 15px;
             right: 20px;
-            font-size: 1.5em;
+            font-size: 25px;
             color: #aaa;
             cursor: pointer;
             transition: color 0.3s;
@@ -155,7 +156,7 @@
             margin-bottom: 20px;
             border: 1px solid #ccc;
             border-radius: 5px;
-            font-size: 1em;
+            font-size: 20px;
         }
 
         .modal-content input[type="submit"] {
@@ -165,7 +166,7 @@
             border: none;
             border-radius: 25px;
             cursor: pointer;
-            font-size: 1em;
+            font-size: 20px;
             transition: background-color 0.3s;
         }
 
@@ -190,7 +191,6 @@
             document.getElementById("editPhoneNumber").value = phoneNumber;
             document.getElementById("editAddress").value = address;
             document.getElementById("editDateOfBirth").value = dateOfBirth;
-
             document.getElementById("editCustomerModal").style.display = "block";
         }    
 
@@ -229,6 +229,7 @@
         </thead>
         <tbody>
             <%
+            //left-variable is of type list,right-getting objects and casting to list
                 List<Customer> customerList = (List<Customer>) request.getAttribute("customerList");
                 if (customerList != null && !customerList.isEmpty()) {
                     for (Customer customer : customerList) {
@@ -269,7 +270,6 @@
         alert("<%= successMessage %>");
     </script>
 <%
-    // Clear the success message from the session after displaying it
     session.removeAttribute("successMessage");
     }
 %>
