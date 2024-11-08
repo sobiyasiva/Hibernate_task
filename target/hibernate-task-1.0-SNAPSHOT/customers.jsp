@@ -173,8 +173,33 @@
         .modal-content input[type="submit"]:hover {
             background-color: #155a8a;
         }
+
+        
     </style>
     <script>
+
+document.addEventListener("DOMContentLoaded", function() {
+    // Add event listener for form submission
+    document.querySelector("form[action='addCustomerServlet']").addEventListener("submit", function(event) {
+        if (!isValidName(document.getElementById("addName").value)) {
+            alert("Name cannot be a number.");
+            event.preventDefault(); // Prevent form submission if invalid
+        }
+    });
+
+    document.querySelector("form[action='editCustomerServlet']").addEventListener("submit", function(event) {
+        if (!isValidName(document.getElementById("editName").value)) {
+            alert("Name cannot be a number.");
+            event.preventDefault(); // Prevent form submission if invalid
+        }
+    });
+});
+
+function isValidName(name) {
+    const namePattern = /^[A-Za-z\s]+$/; // Only allows letters and spaces
+    return namePattern.test(name);
+}
+
         function openAddModal() {
             document.getElementById("addCustomerModal").style.display = "block";
         }
@@ -204,6 +229,9 @@
                 document.getElementById('deleteForm').submit();
             }
         }
+
+
+
 
     </script>
 </head>

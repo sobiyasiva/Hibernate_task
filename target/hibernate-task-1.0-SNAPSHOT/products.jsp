@@ -207,12 +207,6 @@
     <div class="add-button-container">
         <button class="add-button" onclick="openAddModal()">Add Product</button>
     </div>
-
-    <!-- <c:if test="${not empty errorMessage}">
-        <p style="color: red;">${errorMessage}</p>
-    </c:if> -->
-
-    <!-- <c:if test="${not empty productList}"> -->
         <table>
             <thead>
                 <tr>
@@ -264,11 +258,7 @@
         session.removeAttribute("successMessage");
         }
     %>
-    <!-- </c:if>
 
-    <c:if test="${empty productList}">
-        <p>No products found.</p>
-    </c:if> -->
     <!-- Add Product Modal -->
      <div id="addProductModal" class="modal">
         <div class="modal-content">
