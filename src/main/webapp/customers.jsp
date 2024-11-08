@@ -185,6 +185,9 @@
         }
 
         function openEditModal(customerId, name, email, phoneNumber, address, dateOfBirth) {
+            const isConfirmed = confirm('Are you sure you want to edit this customer?');
+            if (isConfirmed) {
+            
             document.getElementById("editId").value = customerId;
             document.getElementById("editName").value = name;
             document.getElementById("editEmail").value = email;
@@ -192,7 +195,8 @@
             document.getElementById("editAddress").value = address;
             document.getElementById("editDateOfBirth").value = dateOfBirth;
             document.getElementById("editCustomerModal").style.display = "block";
-        }    
+            }
+    }  
 
         function openDeleteModal(customerId) {
             if (confirm('Are you sure you want to delete this customer?')) {
