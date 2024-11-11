@@ -11,7 +11,7 @@
    
 </head>
 <body>
-    <h2>Product List</h2>
+    <h1>Product List</h1>
     <div class="add-button-container">
         <button class="add-button" onclick="openAddModal()">Add Product</button>
     </div>
